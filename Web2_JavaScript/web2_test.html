@@ -5,51 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script>
-        function NightDayHandler(self)
-        {
-            var target = document.querySelector('body');
-            var links = document.querySelectorAll('a');
-            var i = 0;
-
-            if(self.value === 'night')
-            {
-                target.style.backgroundColor = 'black';
-                target.style.color = 'white';
-                self.value = 'day';
-
-                while(i<links.length)
-                {
-                    links[i].style.color = 'powderblue';
-                    ++i;
-                }
-            }
-            else
-            {
-                target.style.backgroundColor = 'white';
-                target.style.color = 'black';
-                self.value = 'night';
-                
-                while(i<links.length)
-                {
-                    links[i].style.color = 'blue';
-                    ++i;
-                }
-            }
-        }
-    
-    </script>
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src="colors.js"></script>
 </head>
 <body>
-
+    <h1>181109_Test</h1>
     <h1>181107_Test</h1>
     <h2><a href="http://google.com">GO GOOGLE</a></h2>
 
     <ol>
-        <a href="http://naver.com"><li>naver</li></a>
-        <a href="http://cellbig.com"><li>cellbig</li></a>
-        <a href="http://youtube.com"><li>youtube</li></a>
+        <li><a href="http://naver.com">naver</a></li>
+        <li><a href="http://cellbig.com">cellbig</a></li>
+        <li><a href="http://youtube.com">youtube</a></li>
     </ol>
 
     <!--<input type="text" name="텍스트를 입력해주세요." id="input_text_01" onchange="alert('changed')"><br>
