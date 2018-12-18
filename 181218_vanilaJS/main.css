@@ -1,0 +1,42 @@
+body{
+    background-color : rgb(119, 128, 179);
+    margin:0px;
+    
+}
+
+#floater{
+    float: left;
+    height: 50%;
+    margin-bottom:-120px;
+}
+
+.Timer{
+    /* clear:both;
+    height:240px;
+    position: relative; */
+    background-color : powderblue;
+    text-align : center;
+    padding-bottom:30px;
+    
+}
+
+#Clock{
+    font-size : 100px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition:color 0.5s ease-in-out;
+}
+
+.ClockNormal{
+    color:gray;
+}
+
+.ClockClicked{
+    color: rgb(160, 40, 40);
+}
+
+#ClockDesc{
+    color:gray;
+    font-size : 30px;
+    margin: 0 auto;
+}
