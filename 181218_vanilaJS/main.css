@@ -35,8 +35,17 @@ body{
     color: rgb(160, 40, 40);
 }
 
-#welcomeText{
+.greetings,
+.nonShowing{
+    display: none;
+}
+
+.welcomeText{
     color:gray;
     font-size : 30px;
     margin: 0 auto;
+}
+
+.showing{
+    display: inline;
 }
