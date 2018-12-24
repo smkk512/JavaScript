@@ -1,43 +1,46 @@
 const greetings = document.querySelector(".greetings");
-const inputName = greetings.querySelector(".inputName");
+const inputName = document.querySelector(".inputName");
 
 const welcomeText = document.querySelector(".welcomeText");
 
-const CURRENT_USER = 'currentUser';
-const SHOW_LS = 'showing';
+const CURRENT_USER_LS = 'currentUser';
+const SHOWING_CN = 'showing';
+const NONSHOWING_CN = 'nonShowing'
 
 
 const askForName = () => {
-    greetings.classList.add('showing');
-    inputName.classList.add('showing');
+    greetings.classList.add(SHOWING_CN);
+    greetings.addEventListener('submit', handleNameSubmit);
+}
 
-    inputName.addEventListener('keypress', handleNameSubmit);
+const printGreeting = (name) => {
+    greetings.classList.remove(SHOWING_CN);
+    greetings.classList.add(NONSHOWING_CN);
+    welcomeText.classList.remove(NONSHOWING_CN);
+    welcomeText.classList.add(SHOWING_CN);
+    welcomeText.innerText = "welcome "+ name;
 }
 
 const loadName = () => {
-
-    const localName = localStorage.getItem(CURRENT_USER);
-    console.log(localName);
+    const localName = localStorage.getItem(CURRENT_USER_LS);
     
-    if(localName === undefined){
+    if(localName === null){
         askForName();
     } else {
-        welcomeText.classList.remove('nonShowing');
-        welcomeText.classList.add('showing');
+        printGreeting(localName);
     }
-    welcomeText.innerText = "welcome "+localName;
+    
 }
 
 const setName = (name) => {
-    localStorage.setItem(CURRENT_USER, name);
+    localStorage.setItem(CURRENT_USER_LS, name);
 }
 
 const handleNameSubmit = (event) =>{
-    const key = event.which || event.keyCode; 
-    if(key === 13){
-        const value = event.currentTarget.value;
-        setName(value);
-    }
+    event.preventDefault();
+    const name = inputName.value;
+    printGreeting(name);
+    setName(name);
 }
 
 const greetingInit = () => {
@@ -46,8 +49,6 @@ const greetingInit = () => {
 
 const greetingMain = () => {
     greetingInit();
-    
-    
 }
 
 greetingMain();

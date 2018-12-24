@@ -1,7 +1,6 @@
 body{
     background-color : rgb(119, 128, 179);
     margin:0px;
-    
 }
 
 #floater{
@@ -48,4 +47,25 @@ body{
 
 .showing{
     display: inline;
+}
+
+.frm-todo input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size:30px;
+    text-align: center;
+}
+
+.list-todo{
+    color:rgb(0, 0, 0);
+    font-size : 20px;
+    padding-inline-start: 20%;
+    padding-inline-end: 20%;
+    list-style-type: none;
+    text-align: left;
 }
