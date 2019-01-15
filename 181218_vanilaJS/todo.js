@@ -5,12 +5,27 @@ const frmTodo = document.querySelector('.frm-todo'),
 
 const TODOS_LS = 'toDos';
 
-const arrToDos = []; // todo를 오브젝트에 담아 배열로 저장
+let arrToDos = []; // todo를 오브젝트에 담아 배열로 저장
 
 const handleDelBtnClick = event => {
-    const target = event.toElement.parentNode;
-    const targetParent = event.toElement.parentNode.parentNode;
-    targetParent.removeChild(target);
+    const target = event.target.parentNode;
+    listTodo.removeChild(target);
+
+    const resetTodos = arrToDos.filter(todo => {
+        return todo.id !== target.id;
+    });
+
+    arrToDos = resetTodos;
+    saveToDos();
+    
+    //foreach를 이용한 방법
+    // arrToDos.forEach(todo => {
+    //     if(todo.id === target.id){
+    //         const targetIndex = arrToDos.indexOf(todo);
+    //         arrToDos.splice(targetIndex,1);
+    //     }
+    // });
+    // saveToDos();
 }
 
 //입력한 투두를 리스트에 출력하는 함수
@@ -22,13 +37,13 @@ const printTodo = value => {
     delBtn.innerHTML = 'X';
     delBtn.addEventListener('click', handleDelBtnClick);
     const objTodo = {
-        id:arrToDos.length +1,
+        id:'todo_' + (arrToDos.length +1),
         text:value,
     };
     span.innerText = objTodo.text;
     li.appendChild(delBtn);
     li.appendChild(span);
-    li.id = 'todo_' + objTodo.id;
+    li.id = objTodo.id;
     arrToDos.push(objTodo);
     saveToDos();
 
