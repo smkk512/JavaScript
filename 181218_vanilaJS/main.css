@@ -86,3 +86,9 @@ body{
     z-index: -1;
     animation: fadeIn 0.8s linear;
 }
+
+.js-temp{
+    text-align: left;
+    color:#ccc;
+    font-size:20px;
+}
