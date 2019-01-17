@@ -1,0 +1,22 @@
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center .clock{
+    font-size:100px;
+    -webkit-text-stroke: 2px black;
+    color:rgb(172, 217, 255);
+    text-shadow: 
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.center .name{
+    font-size : 40px;
+    margin-bottom: 40px;
+}

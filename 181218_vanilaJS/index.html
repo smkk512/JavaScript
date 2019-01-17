@@ -3,22 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <title>test web</title>
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
 </head>
 
 <body>
-    <div class="Timer">
-        <h1 id="Clock" class="ClockNormal">WEB TEST</h1>
-        <form class="greetings">
-            <input class="inputName" type="text" placeholder="What's your name?">
-        </form>
-        <h2 class="welcomeText nonShowing">Keep Going</h2>
-    </div>
-    <form class="frm-todo">
-        <input type="text" placeholder="So what to do today?">
-    </form>
-    <ul class="list-todo">
-    </ul>
+    <section class="center">
+        <div class="js-clock clock">
+            <h1 class="clockText">WEB TEST</h1>
+        </div>
+        <div class="js-name name"></div>
+        <div>
+            <form class="frm-todo">
+                <input type="text" placeholder="So what to do today?">
+            </form>
+            <ul class="list-todo"></ul>
+        </div>
+        
+    </section>
+    
     <script src="./timer.js"></script>
     <script src="./greeting.js"></script>
     <script src="./todo.js"></script>

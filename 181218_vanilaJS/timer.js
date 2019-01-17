@@ -1,5 +1,5 @@
 
-const clockText = document.querySelector("#Clock");
+const clockText = document.querySelector(".js-clock .clockText");
 const clockClicked = 'ClockClicked';
 
 const getTime = () =>{
@@ -22,7 +22,7 @@ const handleClick = () => {
 
 const timerMain = () =>{
     clockText.innerHTML = getTime();
-    clockText.addEventListener("click", handleClick);
+    //clockText.addEventListener("click", handleClick);
 
     setInterval(()=>{
         clockText.innerHTML = getTime();
