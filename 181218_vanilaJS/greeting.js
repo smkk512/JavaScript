@@ -23,6 +23,7 @@ const printName = name => {
     nameContainer.innerHTML='';
     const nameSpan = document.createElement('span');
     nameSpan.innerText = 'Hello ' + name + '!' ;
+
     nameContainer.appendChild(nameSpan);
 }
 
@@ -41,7 +42,6 @@ const setName = name => {
     }else{
         console.log('Name is null');
     }
-    
 }
 
 const handleNameSubmit = event =>{

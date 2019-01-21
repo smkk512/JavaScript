@@ -1,6 +1,6 @@
-const frmTodo = document.querySelector('.frm-todo'),
+const frmTodo = document.querySelector('.todo'),
     inputTodo = frmTodo.querySelector('input'),
-    listTodo = document.querySelector('.list-todo');
+    listTodo = document.querySelector('.js-todo-list');
 
 
 const TODOS_LS = 'toDos';
@@ -35,6 +35,8 @@ const printTodo = value => {
     const span = document.createElement('span');
 
     delBtn.innerHTML = 'X';
+    delBtn.classList.add('delBtn');
+
     delBtn.addEventListener('click', handleDelBtnClick);
     const objTodo = {
         id:'todo_' + (arrToDos.length +1),

@@ -1,6 +1,5 @@
 
 const clockText = document.querySelector(".js-clock .clockText");
-const clockClicked = 'ClockClicked';
 
 const getTime = () =>{
     const date = new Date();
@@ -9,15 +8,6 @@ const getTime = () =>{
     const seconds = date.getSeconds();
 
     return `${hours<10? '0'+hours:hours}:${minutes<10 ? '0'+minutes:minutes}:${seconds < 10 ? '0'+seconds:seconds}`;
-}
-
-const handleClick = () => {
-    const hasID = clockText.classList.contains(clockClicked);
-    if(hasID){
-        clockText.classList.remove(clockClicked);
-    } else {
-        clockText.classList.add(clockClicked);
-    }
 }
 
 const timerMain = () =>{
