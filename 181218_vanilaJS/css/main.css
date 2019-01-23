@@ -1,3 +1,13 @@
+body,
+html{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin:0px;
+    padding:0px;
+    font-family: "Open Sans", sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -8,15 +18,13 @@ h6{
 }
 
 body{
-    overflow:scroll;
+    background-size:100%;
     background-color : rgb(25, 28, 43);
     color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
-    margin:0px;
-    padding:0px;
     animation: fadeIn 0.8s linear;
-    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul{
@@ -45,12 +53,4 @@ input::placeholder{
     }
 }
 
-.backgroundImg{
-    position: absolute;
-    top : 0;
-    left : 0;
-    height: 100%;
-    width : 100%;
-    z-index: -1;
-}
 

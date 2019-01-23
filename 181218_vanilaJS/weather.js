@@ -2,22 +2,30 @@
     const body = document.querySelector('body');
 
     const WHEATER_URL = 'https://api.openweathermap.org/data/2.5/weather?';
+    const WHEATHER_ICON_URL = 'http://openweathermap.org/img/w/';
     const WHEATER_API_KEY = 'ec1af28a6484cc1d0274cb33e52ff886';
     const LS_COORD = 'coord';
 
-    function printWeahter(place, temp){
-        const span = document.createElement('div');
-        const placeSpan = document.createElement('div');
+    function printWeahter(place, temp, weatherIconValue){
+        const weather = document.createElement('section');
+        const tempSpan = document.createElement('span');
+        const placeDiv = document.createElement('div');
+        const weatherIcon = document.createElement('img');
 
-        span.classList.add('js-temp');
-        span.innerText = temp;
+        weatherIcon.src = WHEATHER_ICON_URL + weatherIconValue + '.png';
 
-        placeSpan.classList.add('js-place');
-        placeSpan.innerText = place;
+        weather.classList.add('weather')
 
-        body.appendChild(placeSpan);
-        body.appendChild(span);
-        
+        tempSpan.classList.add('temp');
+        tempSpan.innerText = temp + '°C';
+
+        placeDiv.classList.add('place');
+        placeDiv.innerText = place;
+
+        body.appendChild(weather);
+        weather.appendChild(placeDiv);
+        weather.appendChild(weatherIcon);
+        weather.appendChild(tempSpan);
     }
 
 
@@ -38,7 +46,8 @@
         }).then(jsonResponse=>{
             const temp = jsonResponse.main.temp;
             const place = jsonResponse.name;
-            printWeahter(place, temp);
+            const weatherIcon = jsonResponse.weather[0].icon;
+            printWeahter(place, temp, weatherIcon);
         });
     }
 

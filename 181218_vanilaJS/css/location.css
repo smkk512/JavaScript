@@ -1,6 +1,20 @@
-.js-temp,
-.js-place{
-    text-align: left;
+.weather{
+    position: absolute;
+    right:0;
+    top:0;
+    margin:10px;
+    text-align: right;
     color:#ccc;
     font-size:20px;
 }
+
+.weather .temp{
+    float: left;
+    margin-left:10px;
+    margin-top: 15px;
+}
+.weather img{
+    float: left;
+    margin-left: 20px;
+}
+
